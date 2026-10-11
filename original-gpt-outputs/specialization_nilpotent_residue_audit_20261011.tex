@@ -1,0 +1,254 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue]{hyperref}
+\newtheorem{proposition}{Proposition}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\str}{\operatorname{str}}
+\newcommand{\LL}{\mathcal L}
+\newcommand{\Res}{\operatorname{Res}}
+\title{Ordinary specialization and its geometric nilpotent residue}
+\author{Focused independent audit}
+\date{11 October 2026}
+\begin{document}
+\maketitle
+
+\paragraph{Finding.}
+Under the divisor hypotheses in
+\emph{holomorphic\_continuity\_crossing.tex}, specializing the spectral
+fiber at a crossing gives exactly $Z(0)=G(0)c e_1$. Neither ordinary
+parameter continuity nor joint holomorphy follows from those hypotheses.
+The additional calculation here identifies the possible discontinuity
+with a nilpotent trace in the published contact variation formula.
+Unitary Stokes does not annihilate that trace: it reduces it to the
+same weighted $du$--$du_*$ pairing that governs conformal first variation.
+This note does not independently verify the geometric existence of the
+claimed crossing.
+
+\section{The two values and the missing cancellation}
+Work locally at a crossing and write a deformation parameter as $u$,
+with crossing at $u=0$. Suppose
+\[
+ Z(s,u)=G(s,u)\frac{(s-c(u))(s^2-e_1(u)s+e_2(u))}{s-t(u)},
+ \qquad c(0)\ne0,\quad t(0)=e_2(0)=0.
+\]
+The fixed-cut remainder $G$ is holomorphic and nonzero in $s$.
+Specializing $u=0$ gives, as a meromorphic function of $s$,
+\[
+ Z(s,0)=G(s,0)(s-c(0))(s-e_1(0)).
+\]
+Thus its ordinary value is $G(0,0)c(0)e_1(0)$, including zero if
+$e_1(0)=0$.
+
+For comparison assume a transverse, sufficiently regular local
+deformation, so $v:=t'(0)\ne0$, and put $e_2=tH$ with
+$H(0)=e_2'(0)/v$. If ordinary nonresonant values have constant value
+$A\ne0$ on one side and $G,c$ are continuous, then
+\[
+ H(0)=\frac{A}{G(0,0)c(0)}\ne0.
+\]
+The continued nonresonant value is $G(0,0)c(0)H(0)$.
+It equals the ordinary crossing value precisely when $H(0)=e_1(0)$.
+These are different operations on a meromorphic family.
+
+For holomorphic parameter germs, monic division gives
+\begin{equation}\label{division}
+ \frac{s^2-e_1s+tH}{s-t}
+ =s+t-e_1+\frac{t(t-e_1+H)}{s-t}.
+\end{equation}
+Since $G(s,u)(s-c(u))$ is a unit near the crossing, joint holomorphy
+requires the germ identity $H=e_1-t$. Fiberwise cancellation at $u=0$
+does not imply this identity. If $H(0)\ne e_1(0)$, paths $s=a t(u)$,
+$a\ne1$, have the limiting values
+\[
+ \lim_{u\to0}Z(a t(u),u)
+ =G(0,0)c(0)\frac{a e_1(0)-H(0)}{a-1}.
+\]
+Even equality at the single point is weaker than joint holomorphy:
+unless the remainder in \eqref{division} vanishes as a germ, nearby
+genuine poles can be approached along curves close to $s=t(u)$.
+
+The primary references distinguish the two objects. DGRS Theorem~2
+only establishes local constancy on the set with no zero resonance.
+Chaubet--Dang (6.4)--(6.5) removes the cut divisor, while (6.7) retains
+the zero-complex refined torsion in the relation to the specialized
+Laurent coefficient \cite{DGRS,CD}. Neither statement identifies
+$H(0)$ with $e_1(0)$.
+
+\section{An exact Laurent diagnostic from contact variation}
+Let $L=\LL_X^{d_\theta}$, so the spectral matrix is $B=-L$, and put
+$K=\Pi\alpha\wedge\iota_{\dot X}$ on the finite full cut.
+In flow dimension five, CD Lemma~7.4 gives for its horizontal
+alternating divisor $F=Z/G$
+\begin{equation}\label{variation}
+ \partial_u\log F(s,u)
+ =-\str_{C_{\mathrm{cut}}^\bullet}
+       \bigl(K L(L+s)^{-1}\bigr).
+\end{equation}
+The nonzero blocks contribute holomorphic terms near $s=0$.
+At the crossing, direct differentiation of the displayed divisor gives
+\[
+ \partial_u\log F(s,0)
+ =-\frac{c'}{s-c}
+   +\frac{-e_1's+e_2'}{s(s-e_1)}+\frac{v}{s}.
+\]
+If $m=2$, then $e_1(0)\ne0$ and $L^2=0$ on the full zero block.
+Comparison of the $s^{-1}$ coefficients in \eqref{variation} yields
+\begin{equation}\label{m2trace}
+ \str_{C^\bullet(0)}(KL)
+    =v\left(\frac{H(0)}{e_1(0)}-1\right).
+\end{equation}
+Thus a transverse crossing has the continued ordinary value precisely
+when this trace vanishes. In particular, nilpotence by itself does not
+give the required conclusion.
+
+If $m=3$, then $e_1(0)=0$ and $L^3=0$ on the zero block. Since
+$L(L+s)^{-1}=L/s-L^2/s^2$, comparison gives
+\begin{equation}\label{m3trace}
+ \str_{C^\bullet(0)}(KL^2)=e_2'(0)=vH(0),\qquad
+ \str_{C^\bullet(0)}(KL)=e_1'(0)-v.
+\end{equation}
+For a transverse crossing with nonzero continued value, the first
+trace is nonzero. The $m=3$ fiber itself has a simple zero.
+
+\section{The geometric Stokes reduction of the traces}
+We now work on the actual outgoing and incoming zero spaces, using
+the Hermitian flat-bundle pairing. At a crossing their horizontal
+dimensions are $(0,1,m,1,0)$. Choose nonzero outgoing and incoming
+horizontal zero one-forms $u,u_*$, and write
+\[
+ x=d_\theta u=Du,\qquad x_*=d_\theta u_*=Du_*,\qquad
+ W=d\alpha\wedge.
+\]
+Full exactness makes $x,x_*$ nonzero and $D:V^2\to V^3$ surjective.
+The outgoing--incoming pairing and Lefschetz give
+\[
+ B_1:=\int_M\alpha\wedge d\alpha\wedge
+                  \langle u\wedge u_*\rangle_E\ne0.
+\]
+Choose $y\in V^2$ with $Dy=Wu$. For two horizontal degree-two
+states use
+\[
+ P(a,a_*)=\int_M\alpha\wedge\langle a\wedge a_*\rangle_E.
+\]
+Unitarity permits Stokes with the twisted differential. The horizontal
+five-form term vanishes pointwise, giving
+\begin{equation}\label{stokes}
+ P(y,x_*)=-B_1,\qquad P(x,x_*)=0,\qquad
+ P(z,x_*)=0\quad(z\in\ker D).
+\end{equation}
+Consequently $\ell_y(a):=-P(a,x_*)/B_1$ detects the $y$ coordinate.
+Pairing with an incoming zero state also removes the outgoing
+projector, so this formula applies to compressed smooth multiplication.
+
+Set $h=\alpha(\dot X)$, and define
+\[
+ S_h:=P(hx,x_*)
+      =\int_M h\alpha\wedge\langle d_\theta u\wedge
+                                             d_\theta u_*\rangle_E.
+\]
+Contact splitting shows for every $j\ge1$
+\begin{equation}\label{splittrace}
+ \str_{C^\bullet(0)}(K L^j)
+       =-\tr_{V^2}\bigl((\Pi_{V^2}h)L^j\bigr),
+\end{equation}
+because $L=0$ on $V^1,V^3$ and the diagonal action of $K$ on
+$\alpha\wedge V^2$ is multiplication by $h$.
+
+For $m=2$, $\ker D=\mathbb Cx$, and $[B,D]=0$ gives
+$By=\beta x$, $Bx=0$. Hence
+\[
+ \tr_{V^2}(hB)=\beta\ell_y(hx)=-\beta S_h/B_1,
+ \qquad \str_{C^\bullet(0)}(KL)=-\beta S_h/B_1.
+\]
+For $m=3$, choose $z\in\ker D$ complementary to $x$. Nilpotence
+and $[B,D]=0$ give constants $\delta,\eta,\epsilon$ with
+\[
+ Bx=0,\quad Bz=\delta x,\quad By=\epsilon x+\eta z,
+ \quad B^2y=\delta\eta x.
+\]
+Thus
+\begin{equation}\label{rankthree}
+ \str_{C^\bullet(0)}(KL^2)=\delta\eta S_h/B_1.
+\end{equation}
+Full exactness in this case actually forces $\delta\eta\ne0$:
+in degree two the images of $z,y,\alpha\wedge u$ are
+$-\delta\alpha\wedge x$,
+$Wu-\alpha\wedge(\epsilon x+\eta z)$, and
+$Wu-\alpha\wedge x$. They must have rank three, which is
+equivalent to $\delta\eta\ne0$. The nilpotent block therefore has
+length three.
+
+\section{Conformal first variation does not kill the weighted term}
+For the conformal family $g_u=e^{-2u b}g$ under radial identification,
+$\dot\alpha=-b\alpha$, so differentiating $\alpha(X)=1$ gives
+$h=\alpha(\dot X)=b\circ\pi$. CDDP Lemma~4.2, (4.22), and (4.38)
+give the one-form carrier variation
+\begin{equation}\label{carrier}
+                 v=t'(0)=S_h/B_1.
+\end{equation}
+At a simple unitary twisted one-zero block the same proof works:
+the connection preserves the coefficient pairing, Cartan holds, and
+$W d_\theta u=W d_\theta u_*=0$ because the corresponding horizontal
+degree-four zero space vanishes. These are precisely the identities
+needed in the integration-by-parts calculation.
+
+Combining \eqref{carrier} with the preceding geometric formulas gives
+\[
+ m=2:\quad \str(KL)=-\beta v,
+ \qquad
+ m=3:\quad \str(KL^2)=\delta\eta v.
+\]
+At a transverse crossing, \eqref{m2trace} identifies
+$\beta=1-H(0)/e_1(0)$, and \eqref{m3trace} identifies
+$\delta\eta=H(0)$. In the $m=2$ case ordinary continuity is therefore
+equivalent to semisimplicity of the middle zero block. In the $m=3$
+case full exactness and transversality forbid the vanishing proposed
+for the quadratic nilpotent trace.
+
+The concrete incorrect Stokes inference would be to treat $h x$ as
+exact and conclude $S_h=0$. Direct Stokes instead gives
+\begin{equation}\label{weightedstokes}
+ S_h=\int_M dh\wedge\alpha\wedge
+                     \langle u\wedge d_\theta u_*\rangle_E.
+\end{equation}
+The term with $d\alpha$ is a horizontal five-form and vanishes, but
+the $dh$ term remains. Multiplication satisfies
+$h d_\theta u=d_\theta(hu)-dh\wedge u$.
+For nonconstant base $b$ this is not an exactness-preserving operation.
+CDDP's conformal nondegeneracy calculation is built from this very
+weighted pairing and supplies nonzero geometric examples at the
+hyperbolic endpoint. It does not assert that it vanishes at acyclic
+crossings \cite{CDDP}.
+
+Likewise the finite trace of $[L,\Pi h\Pi]$ vanishes by cyclicity,
+but this only concerns the compressed commutator. It is not an
+identity setting $\tr(\Pi h\Pi L)$ to zero. Incoming Stokes duality
+and geodesic reversal give an indefinite pairing; they do not turn
+this nilpotent trace into a positive-definite skew-adjoint trace.
+
+\paragraph{Audit conclusion.}
+The ordinary spectral cancellation is valid. A rescue by continuous
+nonresonant values would require the extra equality $H(0)=e_1(0)$;
+joint holomorphy would require the stronger germ identity $H=e_1-t$.
+At a transverse $m=2$ crossing, the needed equality is exactly
+middle-degree semisimplicity. The actual contact and unitary Stokes
+calculation reduces its obstruction to a weighted conformal pairing,
+rather than eliminating it. No invalid inference in the supplied
+fiber-specialization step has been found.
+
+\begin{thebibliography}{9}
+\bibitem{CD} Y. Chaubet and N. V. Dang,
+\emph{Dynamical torsion for contact Anosov flows},
+\url{https://arxiv.org/html/1911.09931v2},
+(6.4)--(6.7), Lemma 7.4 and (7.7)--(7.10).
+\bibitem{DGRS} N. V. Dang, C. Guillarmou, G. Rivi\`ere and S. Shen,
+\emph{The Fried conjecture in small dimensions},
+\url{https://webusers.imj-prg.fr/~shu.shen/publication/Invention_DGRS.pdf},
+Theorem 2 and Proposition 7.3.
+\bibitem{CDDP} M. Ceki\'c, B. Delarue, S. Dyatlov and G. P. Paternain,
+\emph{The Ruelle zeta function at zero for nearly hyperbolic
+3-manifolds}, \url{https://arxiv.org/html/2009.08558},
+Lemma 4.2, (4.22), (4.38), and Theorem 5.
+\end{thebibliography}
+\end{document}
