@@ -9,3 +9,4 @@ rev = "331d5244f0d3aad530d9ab00ded135b4c7691502"
 
 [[lean_lib]]
 name = "FriedLeanVerification"
+roots = ["FriedLeanVerification", "FriedLeanVerification.ConditionalObstruction", "AxiomsCheck"]

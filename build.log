@@ -1,0 +1,72 @@
+✔ [3462/3469] Built FriedLeanVerification.HolomorphicInputs (9.3s)
+✔ [3463/3469] Built FriedLeanVerification.AnalyticInputs (9.9s)
+✔ [3464/3469] Built FriedLeanVerification.AlgebraInputs (10s)
+✔ [3465/3469] Built FriedLeanVerification (3.9s)
+✔ [3466/3469] Built FriedLeanVerification.CrossingConsequences (1.4s)
+✔ [3467/3469] Built FriedLeanVerification.ConditionalObstruction (1.4s)
+ℹ [3468/3469] Built AxiomsCheck (45s)
+info: AxiomsCheck.lean:5:0: 'FriedLeanVerification.exact_crossing_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:6:0: 'FriedLeanVerification.full_cut_divisor_cancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:7:0: 'FriedLeanVerification.normalized_ratio_tendsTo_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:8:0: 'FriedLeanVerification.normalized_modulus_tendsTo_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:9:0: 'FriedLeanVerification.crossing_from_endpoint_signs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:10:0: 'FriedLeanVerification.crossing_bound_of_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:11:0: 'FriedLeanVerification.crossing_exists_with_quadratic_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:12:0: 'FriedLeanVerification.exact_middle_dimension_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:13:0: 'FriedLeanVerification.exact_middle_dimension_two_or_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:14:0: 'FriedLeanVerification.crossing_parameter_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:15:0: 'FriedLeanVerification.crossing_roots_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:16:0: 'FriedLeanVerification.coefficient_quotients_of_continuity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:17:0: 'FriedLeanVerification.factored_root_quotients' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:18:0: 'FriedLeanVerification.exponential_normalization_tends_to_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: AxiomsCheck.lean:19:0: 'FriedLeanVerification.abstract_counterexample_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:20:0: 'FriedLeanVerification.monodromy_preserves_intersection' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:21:0: 'FriedLeanVerification.monodromy_charpoly' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:22:0: 'FriedLeanVerification.monodromy_no_fixed_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:23:0: 'FriedLeanVerification.monodromy_mod_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:24:0: 'FriedLeanVerification.two_order_mod_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:25:0: 'FriedLeanVerification.monodromy_charpoly_irreducible_mod_two' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: AxiomsCheck.lean:26:0: 'FriedLeanVerification.monodromy_charpoly_irreducible_int' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:27:0: 'FriedLeanVerification.monodromy_charpoly_irreducible_rat' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:28:0: 'FriedLeanVerification.monodromy_real_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:29:0: 'FriedLeanVerification.monodromy_not_cyclotomic' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:30:0: 'FriedLeanVerification.monodromy_not_power_composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:31:0: 'FriedLeanVerification.rank_one_slot_excludes_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:32:0: 'FriedLeanVerification.middle_polynomial_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:33:0: 'FriedLeanVerification.middle_crossing_constant_coefficient_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: AxiomsCheck.lean:34:0: 'FriedLeanVerification.middle_crossing_third_order_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:35:0: 'FriedLeanVerification.middle_crossing_multiplicity_cases' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:36:0: 'FriedLeanVerification.weighted_full_cut_telescoping' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:37:0: 'FriedLeanVerification.chirality_trace_cancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:38:0: 'FriedLeanVerification.torsion_supertrace_sign' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:39:0: 'FriedLeanVerification.horizontal_injective_of_cartan' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:40:0: 'FriedLeanVerification.contraction_implies_exactness' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:41:0: 'FriedLeanVerification.crossing_divisor_cancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:42:0: 'FriedLeanVerification.crossing_value_of_punctured_divisor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:43:0: 'FriedLeanVerification.crossing_value_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:44:0: 'FriedLeanVerification.crossing_simple_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:45:0: 'FriedLeanVerification.crossing_analytic_order_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:46:0: 'FriedLeanVerification.uniform_neumann_disk' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:47:0: 'FriedLeanVerification.projection_transfer_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:48:0: 'FriedLeanVerification.close_projections_equal_rank' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:49:0: 'FriedLeanVerification.finite_trace_integral_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:50:0: 'FriedLeanVerification.crossing_asymptotic' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:51:0: 'FriedLeanVerification.conditional_crossing_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:52:0: 'FriedLeanVerification.horizontal_maps_of_full_complex_endpoints' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: AxiomsCheck.lean:53:0: 'FriedLeanVerification.resonant_crossing_polynomial_cases' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:54:0: 'FriedLeanVerification.crossing_sequence_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:55:0: 'FriedLeanVerification.ordinary_value_obstruction_of_ratio_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: AxiomsCheck.lean:56:0: 'FriedLeanVerification.even_derivative_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:57:0: 'FriedLeanVerification.even_analytic_quadratic_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AxiomsCheck.lean:58:0: 'FriedLeanVerification.quadratic_factor_eventually_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3469 jobs).
