@@ -70,6 +70,12 @@ conditional limit theorem. It assumes convergence of the crossing parameters;
 the new theorem constructs them from IVT input estimates and includes eventual
 strict discrepancy. Neither conditional theorem closes the geometric gap.
 
+The factored quotient and abstract ratio theorems now require the character
+parameter to be nonzero only eventually, which is sufficient for their limits.
+`finite_trace_exponential_tends_to_one` also composes the bounded finite-trace
+integral estimate directly with the exponential normalization limit; its trace
+bound need only hold eventually.
+
 ## Checked results and their boundaries
 
 | Manuscript component | Checked Lean result | Still required to apply it to the manuscript |
@@ -87,7 +93,7 @@ strict discrepancy. Neither conditional theorem closes the geometric gap.
 | Crossing multiplicities | For `(X-c)X(X²-e₁X+e₂)`, lower zero multiplicity two implies `e₂=0`; with multiplicity at most three, the two cases are exactly `m=3 ↔ e₁=0` and `m=2 ↔ e₁≠0`. | Identify this polynomial as the middle cut characteristic polynomial and its root multiplicity as generalized zero-space dimension. |
 | Full cut divisor | The five-degree weighted determinant product telescopes; contact-specialized factors cancel; the punctured crossing identity extends to the value at zero under continuity. | Prove the actual full/horizontal cut determinant identities and the zeta/complementary-factor bridge, including its conventions. |
 | Ordinary zero case | Nonzero `G(0),c` give the exact zero/nonzero criterion; when `e₁=0`, the derivative is nonzero and the analytic order is exactly one. | Identify the actual fixed-parameter zeta germ with the specialized analytic product and prove its complementary factor is analytic/nonzero. |
-| Finite-cut torsion variation | The displayed chirality traces cancel with the claimed supertrace sign. A uniformly bounded finite trace bounds the integral exponent. A bounded exponent gives an exponential ratio tending to one. | Prove chirality preservation and determinant-line torsion differentiation, the diagonal-block formulas, projector transport regularity, the dynamical torsion bridge and invariance, and the uniform trace bound. |
+| Finite-cut torsion variation | The displayed chirality traces cancel with the claimed supertrace sign. An eventually bounded finite trace bounds the integral exponent and gives an exponential normalization tending to one. | Prove chirality preservation and determinant-line torsion differentiation, the diagonal-block formulas, projector transport regularity, the dynamical torsion bridge and invariance, and the uniform trace bound. |
 | Relative coefficient limits | Joint continuity and `c=θ²C`, `e₁=θ²A` give the two root quotients tending to one and zero. | Construct the uniform quotients with their hyperbolic origin values. |
 | Final normalized value | Exact ratio identity, complex/modulus limit zero, and eventual strict discrepancy under calibration. | Fried's hyperbolic modulus identity, odd-dimensional unitary analytic-torsion metric invariance, and the identification with the conjecture's actual target. |
 

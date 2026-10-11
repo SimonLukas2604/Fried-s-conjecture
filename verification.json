@@ -1,7 +1,7 @@
 {
   "status": "conditional_verification_only",
   "full_counterexample_verified": false,
-  "theorem_count": 54,
+  "theorem_count": 55,
   "all_theorems_built": true,
   "all_theorems_axiom_audited": true,
   "warnings_as_errors": true,
@@ -15,13 +15,13 @@
   "mathlib_revision": "331d5244f0d3aad530d9ab00ded135b4c7691502",
   "manuscript_sha256": "23672871936c6af5c6b13fc556a701027014a770ab291bb1c59652902ee5681e",
   "source_sha256": {
-    "FriedLeanVerification.lean": "f0b18f3c956a717942d0adf0a12bdad3a363ff56dabd6397fd10d64ef567c942",
+    "FriedLeanVerification.lean": "bdbeb659312d208713639bf9c0478eeb0c6c7c1a7f47e809340e86a75bc3f82a",
     "FriedLeanVerification/AlgebraInputs.lean": "afed3c81d045d3817db84c095f7df03a414b8b3b0f080a9ab2ae901498176b6f",
     "FriedLeanVerification/AnalyticInputs.lean": "998012bd957e6864338ef1c23e9b94e905467aac71b0643458acaa47efb198c7",
-    "FriedLeanVerification/ConditionalObstruction.lean": "02ece6309babdb9af6673c9451a0d9ee8b59227dd2f738bafd12d4c98cbcbb84",
+    "FriedLeanVerification/ConditionalObstruction.lean": "61aae9dbadfb42afbec96ce327035a5a2ea9f18fa98c06ed3e3f3b3da56c4507",
     "FriedLeanVerification/CrossingConsequences.lean": "3f655f5607f49baf08246627cc13f0f9893301c42090a9c37076f47c8f417cb0",
     "FriedLeanVerification/HolomorphicInputs.lean": "c3b29b6fd940910ed12d50e814ac8466a7f75e0dbb688dda97b3ed6eab6b68f4",
-    "AxiomsCheck.lean": "f6b25acce498a041b0b7648feed169c2ffad39374cd650ad75fc2337a9522ca3",
+    "AxiomsCheck.lean": "41fcb801caf3f7aa6cd104cd9a7d6fc7392bacbd2ee8c875b4c5682628cbc486",
     "lakefile.toml": "bead9888e78a54657e3ff9047b5a0503b242e3bc9ed329f1841209c61065d5df"
   },
   "theorems": [
@@ -39,6 +39,7 @@
     "coefficient_quotients_of_continuity",
     "factored_root_quotients",
     "exponential_normalization_tends_to_one",
+    "finite_trace_exponential_tends_to_one",
     "abstract_counterexample_ratio",
     "monodromy_preserves_intersection",
     "monodromy_charpoly",

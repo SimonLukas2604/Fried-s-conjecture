@@ -49,7 +49,8 @@ theorem conditional_crossing_obstruction
     filter_upwards with n
     exact huBound n (σ n) ⟨(hroots n).1.le, (hroots n).2.1⟩
   have hlim := abstract_counterexample_ratio θ σ G₀ (fun n => u n (σ n))
-    Kvar C A hθ hσ hθne hG₀ hC hA hC0 hA0 hu
+    Kvar C A hθ hσ (Filter.Eventually.of_forall hθne)
+    hG₀ hC hA hC0 hA0 hu
   have hratio : Tendsto (fun n => Z n (σ n) / Z n 0) atTop (𝓝 (0 : ℂ)) := by
     apply hlim.congr'
     filter_upwards with n

@@ -317,7 +317,7 @@ theorem factored_root_quotients
     (C A : ℝ × ℝ → ℂ)
     (hC : ContinuousAt C (0, 0)) (hA : ContinuousAt A (0, 0))
     (hC0 : C (0, 0) ≠ 0) (hA0 : A (0, 0) = 0)
-    (hθne : ∀ n, θ n ≠ 0) :
+    (hθne : ∀ᶠ n in atTop, θ n ≠ 0) :
     Tendsto
       (fun n => (((θ n : ℂ) ^ 2 * C (θ n, σ n)) /
         ((θ n : ℂ) ^ 2 * C (θ n, 0)))) atTop (𝓝 (1 : ℂ)) ∧
@@ -333,11 +333,11 @@ theorem factored_root_quotients
     hCbaseTendsto.eventually_ne hC0
   constructor
   · apply hcoeff.1.congr'
-    filter_upwards [hCbase] with n hCn
-    field_simp [hθne n, hCn]
+    filter_upwards [hCbase, hθne] with n hCn hθn
+    field_simp [hθn, hCn]
   · apply hcoeff.2.congr'
-    filter_upwards [hCbase] with n hCn
-    field_simp [hθne n, hCn]
+    filter_upwards [hCbase, hθne] with n hCn hθn
+    field_simp [hθn, hCn]
 
 /-! ## Normalization factor
 
@@ -369,6 +369,25 @@ theorem exponential_normalization_tends_to_one
   change Tendsto (NormedSpace.exp ∘ u) atTop (𝓝 1)
   simpa only [NormedSpace.exp_zero] using hexp
 
+/-- If the integrand of a finite-trace variation formula is uniformly bounded
+on the short interval, its exponential normalization tends to one. The trace
+bound is only needed eventually, matching the filter-level hypotheses used by
+the ratio theorem. -/
+theorem finite_trace_exponential_tends_to_one
+    (H : ℕ → ℝ → ℂ) (σ : ℕ → ℝ) (K : ℝ)
+    (hσ : Tendsto σ atTop (𝓝 0))
+    (hbound : ∀ᶠ n in atTop,
+      ∀ v ∈ Set.uIoc 0 (σ n), ‖H n v‖ ≤ K) :
+    Tendsto
+      (fun n => Complex.exp (∫ v in (0 : ℝ)..σ n, H n v))
+      atTop (𝓝 1) := by
+  have huBound : ∀ᶠ n in atTop,
+      ‖∫ v in (0 : ℝ)..σ n, H n v‖ ≤ K * |σ n| := by
+    filter_upwards [hbound] with n hn
+    exact finite_trace_integral_bound (H n) K (σ n) hn
+  exact exponential_normalization_tends_to_one
+    (fun n => ∫ v in (0 : ℝ)..σ n, H n v) σ K hσ huBound
+
 /-! ## End-to-end abstract theorem
 
 This theorem assembles the formal parts of the proof. Its hypotheses are the
@@ -380,7 +399,7 @@ theorem abstract_counterexample_ratio
     (θ σ : ℕ → ℝ) (G₀ u : ℕ → ℂ) (K : ℝ)
     (C A : ℝ × ℝ → ℂ)
     (hθ : Tendsto θ atTop (𝓝 0)) (hσ : Tendsto σ atTop (𝓝 0))
-    (hθne : ∀ n, θ n ≠ 0)
+    (hθne : ∀ᶠ n in atTop, θ n ≠ 0)
     (hG₀ : ∀ᶠ n in atTop, G₀ n ≠ 0)
     (hC : ContinuousAt C (0, 0)) (hA : ContinuousAt A (0, 0))
     (hC₀ : C (0, 0) ≠ 0) (hA₀ : A (0, 0) = 0)
@@ -401,9 +420,9 @@ theorem abstract_counterexample_ratio
   have hCbase : ∀ᶠ n in atTop, C (θ n, 0) ≠ 0 :=
     (hC.tendsto.comp hbasePair).eventually_ne hC₀
   have hc₀ : ∀ᶠ n in atTop, c₀ n ≠ 0 := by
-    filter_upwards [hCbase] with n hCn
+    filter_upwards [hCbase, hθne] with n hCn hθn
     dsimp [c₀]
-    exact mul_ne_zero (pow_ne_zero 2 (Complex.ofReal_ne_zero.mpr (hθne n)))
+    exact mul_ne_zero (pow_ne_zero 2 (Complex.ofReal_ne_zero.mpr hθn))
       hCn
   have hG : Tendsto (fun n => G n / G₀ n) atTop (𝓝 (1 : ℂ)) := by
     have hexp := exponential_normalization_tends_to_one u σ K hσ huBound

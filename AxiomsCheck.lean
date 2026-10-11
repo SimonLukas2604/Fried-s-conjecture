@@ -16,6 +16,7 @@ set_option warningAsError true
 #print axioms FriedLeanVerification.coefficient_quotients_of_continuity
 #print axioms FriedLeanVerification.factored_root_quotients
 #print axioms FriedLeanVerification.exponential_normalization_tends_to_one
+#print axioms FriedLeanVerification.finite_trace_exponential_tends_to_one
 #print axioms FriedLeanVerification.abstract_counterexample_ratio
 #print axioms FriedLeanVerification.monodromy_preserves_intersection
 #print axioms FriedLeanVerification.monodromy_charpoly
