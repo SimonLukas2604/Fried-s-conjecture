@@ -1,0 +1,432 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\LL}{\mathcal L}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\str}{\operatorname{str}}
+\newcommand{\Hol}{\operatorname{Hol}}
+\title{Counterexample to the Fried conjecture}
+\author{}
+\date{11 October 2026\\[2pt]\small Manuscript draft}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We construct negatively curved metrics on a closed three-manifold and
+acyclic unitary line characters for which the value at zero of the Ruelle
+zeta function, divided by the squared analytic torsion, tends to zero.
+The construction combines the hyperbolic twisted resonance calculation
+with a conformal variation that moves a one-form resonance through zero.
+Uniform holomorphy in the character parameter and a finite-cut torsion
+variation formula determine the zeta value at the crossing. The argument
+concerns the ordinary meromorphic zeta function and does not identify its
+specialized value with a continued value from nearby metrics.
+\end{abstract}
+
+\section{Statement}
+For a closed oriented negatively curved manifold $(\Sigma,g)$ and a
+unitary representation $\chi$, put
+\begin{equation}\label{zeta}
+ Z_{g,\chi}(s)=\prod_{\gamma\ \mathrm{primitive}}
+       \det\bigl(\Id-\chi(\gamma)e^{-s\ell_g(\gamma)}\bigr).
+\end{equation}
+The product is over primitive oriented geodesic-flow trajectories and
+extends meromorphically. The Fried conjecture, in the form of
+\cite[Conjecture 9]{Zw}, asserts that for acyclic $\chi$ and
+$n=\dim\Sigma>2$,
+\begin{equation}\label{fried}
+ |Z_{g,\chi}(0)|^{(-1)^{n-1}}=T_\chi(\Sigma)^2,
+\end{equation}
+where $T_\chi$ is Ray--Singer analytic torsion. The survey's coordinate
+is $\zeta_\chi(\lambda)=Z_{g,\chi}(-i\lambda)$.
+
+\begin{theorem}\label{main}
+There exist a closed oriented hyperbolic three-manifold $(\Sigma,g_0)$,
+smooth negatively curved metrics $g_j\to g_0$, and acyclic unitary line
+characters $\chi_j\to\mathbf1$ such that $Z_{g_j,\chi_j}$ is holomorphic
+at zero and
+\begin{equation}\label{ratio}
+ \frac{|Z_{g_j,\chi_j}(0)|}{T_{\chi_j}(\Sigma)^2}\longrightarrow0.
+\end{equation}
+Consequently \eqref{fried} fails for all sufficiently large $j$.
+\end{theorem}
+
+The characters are acyclic at every member of the sequence; only their
+limit is nonacyclic. The mechanism is a zero-resonance crossing at which
+spectral specialization and continuation of nearby zero values need not
+agree. We use the resonance calculations of Dang--Guillarmou--Rivi\`ere--Shen
+(DGRS) \cite{DGRS}, the conformal variation of
+Ceki\'c--Delarue--Dyatlov--Paternain (CDDP) \cite{CDDP}, and the dynamical
+torsion of Chaubet--Dang \cite{CD}.
+The resonance-crossing strategy was proposed in the conditional formal
+reduction \cite{Crossing}. We derive the geometric and analytic input
+below, keeping a fixed spectral cut through the crossing.
+
+\section{Geometric and spectral preparation}
+Choose $(\Sigma,g_0)$ with $b_1(\Sigma)=1$. Such a manifold can be
+constructed as follows. A genus-two mapping class with symplectic
+homology action
+\[
+ T=\begin{pmatrix}A&-\Id_2\\ \Id_2&0\end{pmatrix},\qquad
+ A=\begin{pmatrix}2&1\\1&-1\end{pmatrix},
+\]
+has characteristic polynomial $p(x)=x^4-x^3-x^2-x+1$. Modulo two,
+$p=\Phi_5$ is irreducible; a real root between one and two excludes
+cyclotomicity, and the odd-degree coefficients exclude $p=q(x^k)$,
+$k>1$. The homological pseudo-Anosov criterion
+\cite[Propositions 1--2]{MS} and fibered hyperbolization \cite{Thurston}
+therefore give a closed hyperbolic mapping torus. The Wang sequence and
+$p(1)=-1$ give $b_1=1$.
+
+Let $\omega\ne0$ be a real harmonic one-form and set
+\begin{equation}\label{family}
+ d_z=d+iz\omega\wedge,\qquad g_\tau=e^{-2\tau b}g_0.
+\end{equation}
+For real $z=\theta$, this connection defines a unitary character
+$\chi_\theta$. All sufficiently small nonzero $\theta$ are acyclic.
+Indeed, the small scalar and one-form Hodge spectral projections each
+have rank one. Nontrivial holonomy makes the scalar eigenvalue
+$\mu_0(\theta)$ positive, and $d_\theta f_\theta$ occupies the unique
+small one-form slot at that same eigenvalue. Unitary Hodge duality
+excludes harmonic forms in degrees two and three. This also leaves a
+uniform positive gap in the coexact one-form spectrum. Since
+$d^*\omega=0$, the first scalar eigenfunction correction vanishes, so
+\begin{equation}\label{c0}
+ \mu_0(\theta)=\kappa\theta^2+O(\theta^4),\qquad
+ c_0(\theta):=-1+\sqrt{1-\mu_0(\theta)}
+       =-\frac\kappa2\theta^2+O(\theta^4),\qquad
+ \kappa=\frac{\|\omega\|_2^2}{\operatorname{vol}(\Sigma)}>0.
+\end{equation}
+
+Identify the unit bundles with $M=S_{g_0}\Sigma$ by radial scaling.
+Write $\alpha_\tau,X_\tau$ for the contact form and Reeb field, and
+\[
+ L_{z,\tau}=\LL^{d_z}_{X_\tau},\qquad B_{z,\tau}=-L_{z,\tau}.
+\]
+Thus the spectral coordinate is $s$, with resolvent $(L+s)^{-1}$.
+Fix a small circle $\gamma$ about zero containing no boundary resonance
+at $(z,\tau)=(0,0)$ in any degree. Denote its horizontal generalized
+resonance spaces by $U^k$ and its full spaces by $C^k$. Contact splitting
+and Lefschetz give
+\begin{equation}\label{ranks}
+ \dim U^\bullet=(1,2,4,2,1),\qquad
+ \dim C^\bullet=(1,3,6,6,3,1),\qquad
+ C^k=U^k\oplus\alpha\wedge U^{k-1}.
+\end{equation}
+
+\begin{lemma}\label{axes}
+On the hyperbolic axis, the horizontal spectra in degrees zero, one,
+and two are respectively
+\begin{equation}\label{hyper}
+ (c_0),\qquad(c_0,c_0),\qquad(c_0,c_0,c_0,-c_0).
+\end{equation}
+There is a smooth real $b$ for which the untwisted one-form companion
+root satisfies $t(0,\tau)=r\tau+o(\tau)$ with $r>0$. For small
+$\tau>0$, the untwisted horizontal zero multiplicities are $(1,1,3,1,1)$.
+\end{lemma}
+\begin{proof}
+Use DGRS's Selberg parameter $s$, centered at one. Bunke--Olbrich's
+Selberg determinant formula \cite[Proposition 4.7]{BO} gives, up to
+nonvanishing factors,
+\[
+ Z^D_{\mathbf1}(s)\doteq
+ \det\bigl(\Delta_\theta^{(0)}-1+(s-1)^2\bigr),\qquad
+ Z^D_{\nu_1}(1+w)\doteq
+ \frac{\det(\Delta_\theta^{(1)}+w^2)}
+      {\det(\Delta_\theta^{(0)}+w^2)},
+\]
+where $\nu_1$ is the pair of $SO(2)$ weights $\pm1$. This pair
+contributes one graded determinant. The exact one-form spectrum cancels
+the scalar denominator, including $\mu_0$; the remaining coexact spectrum
+has the gap proved above. At $\theta=0$ the harmonic factors cancel
+because $b_0=b_1=1$.
+
+In DGRS (7.6), the shifts are $2(j-l)+p+2+k$, with $\sigma_p$ the
+\emph{trace-free} symmetric representation. The factors with shifts at
+most two reduce, near zero, to
+\[
+ P_0\doteq Z^D_{\mathbf1}(s+2),\qquad
+ P_1\doteq Z^D_{\mathbf1}(s+2)^2,\qquad
+ P_2\doteq Z^D_{\mathbf1}(s)Z^D_{\mathbf1}(s+2)^3.
+\]
+The other weight-two factor has virtual lift
+$\operatorname{Sym}^2_0-\Lambda^1$ and shifted operators
+$\nabla^*\nabla-2+2s+s^2$ and $\nabla^*\nabla+2+2s+s^2$.
+DGRS Proposition 7.7's Bochner bound $\nabla^*\nabla\ge3$ on
+$\operatorname{Sym}^2_0$ excludes its small roots; the unitary twist adds
+no curvature term. Higher shifts lie in the zero-free Euler half-plane.
+The scalar equations $\mu_0+s^2\pm2s=0$ now give \eqref{hyper}, with
+algebraic multiplicities as in DGRS. We use BO only for its Selberg
+formula, not its Ruelle normalization.
+
+For the metric direction, normalize $u\in\mathcal C_\psi$ by
+$\pi_*(d\alpha\wedge u)=\omega$, and put $u_*=J^*u$, where
+$J(x,v)=(x,-v)$. Set $f=\Delta|\omega|^2$ with CDDP's nonpositive
+Laplacian, and choose $b=Q_4f$. Their Theorem 5 and (5.6) give
+\[
+ S:=\int_M(\pi^*b)\alpha\wedge du\wedge du_*
+      =\frac16\|f\|_2^2>0.
+\]
+Strict positivity follows from Proposition A.1. The pairing formulas
+(3.55)--(3.57), (3.67), and their fiber orientation give
+$\int_M\alpha\wedge d\alpha\wedge u\wedge u_*=\|\omega\|_2^2/(4\pi)$.
+Equations (4.22) and (4.38) annihilate both the closed row and column of
+the compressed first variation and give the remaining entry $iS$.
+Since CDDP uses $P=-iL=iB$, the variation of $B$ is
+$\operatorname{diag}(0,r)$, where
+\[
+ r=\frac{2\pi}{3\|\omega\|_2^2}\|f\|_2^2>0.
+\]
+This is CDDP Theorem 3's nondegeneracy condition when $b_1=1$;
+that theorem and Corollary 4.1 give the asserted zero multiplicities.
+Small conformal perturbations remain negatively curved.
+\end{proof}
+
+\section{The finite resonance divisor}
+Write $c=B|_{U^0}$, $A_1=B|_{U^1}$, and $A_2=B|_{U^2}$.
+All spaces below refer to the fixed cut $\gamma$.
+
+\begin{lemma}\label{coefficients}
+On one fixed complex disk $|z|<\rho$, the finite characteristic
+coefficients are holomorphic in $z$ and continuous in $\tau$, locally
+uniformly in $z$. They are even in $z$ and real on the real locus.
+There are continuous, character-holomorphic functions $C,T,A$ such that
+\begin{align}
+ c=z^2C,&\qquad t:=\tr A_1-c=t(0,\tau)+z^2T,
+      &C(0,0)=T(0,0)=-\kappa/2,\label{factors}\\
+ \det(s-A_1)&=(s-c)(s-t),&
+ \det(s-A_2)=(s-c)(s-t)(s^2-e_1s+e_2),\label{polys}\\
+ e_1=z^2A,&\qquad A(0,0)=0,&
+ e_1(z,0)=0,\quad e_2(z,0)=-c_0(z)^2.\label{middle}
+\end{align}
+Also $e_1(0,\tau)=e_2(0,\tau)=0$.
+\end{lemma}
+\begin{proof}
+Chaubet--Dang Appendix B gives common anisotropic spaces
+$\mathcal H_j$ on a finite list of levels, uniform same-level contour
+resolvent bounds, and metric continuity $\mathcal H_{j+1}\to\mathcal H_j$.
+The connection perturbation is bounded multiplication:
+$L_{z,\tau}=L_{0,\tau}+zV_\tau$, $V_\tau=i\pi^*\omega(X_\tau)$.
+Consequently, on a single disk independent of $\tau$,
+\begin{equation}\label{neumann}
+ R_{z,\tau}=R_{0,\tau}(\Id+zV_\tau R_{0,\tau})^{-1}
+\end{equation}
+is a uniformly convergent Neumann series. Bounded perturbation preserves
+the graph domain at each fixed metric; no common graph domain across
+metrics is required. The resolvent identity gives locally uniform metric
+continuity with one lost level. Contour integration gives these properties
+for $\Pi$ and $B\Pi$. Fixed smooth sources $f_j$ and tests $\ell_i$ with
+invertible pairing matrix $(\ell_i\Pi f_j)$ produce finite frames and
+actual compressed matrices. Insert $\Id-\alpha\wedge\iota_X$ for
+horizontal degrees. Nearby projectors have the ranks \eqref{ranks}.
+
+Pairing every orbit with its reversal proves evenness of each horizontal
+Euler determinant. The two holonomies are $e^{\pm iz\int_\gamma\omega}$,
+and a symplectic return map and its inverse have the same exterior traces
+and $|\det(\Id-P_\gamma)|$. For real $z$ the paired coefficients are
+real. Continuation proves the corresponding identities for the cut
+characteristic polynomials.
+
+Put $D=d_z-\alpha\wedge L$ and $W=d\alpha\wedge$. Contact calculus gives
+\begin{equation}\label{contact}
+ [B,D]=0,\qquad D^2=WB.
+\end{equation}
+For real nonzero $\theta$, scalar zero exclusion
+\cite[Lemma 7.4]{DGRS} gives $c\ne0$. Applying \eqref{contact} to its
+scalar eigenstate shows that $c$ occurs in $A_1$, proving the first
+factorization in \eqref{polys}; it extends by holomorphy. As $c(0,\tau)=0$,
+evenness and Cauchy's formula give \eqref{factors}. Explicitly, if
+$h(0,\tau)=0$ is even, then
+\[
+ \frac{h(z,\tau)}{z^2}=\frac1{2\pi i}\int_{|w|=a}
+             \frac{h(w,\tau)}{w^2(w-z)}\,dw,\qquad |z|<a<\rho.
+\]
+This proves continuity of the quotient, including at $z=0$.
+Equation \eqref{c0} supplies its origin values, so $c\ne0$ for all
+small complex $z\ne0$.
+
+When $A_1$ is invertible, $D:U^1\to U^2$ is injective by
+\eqref{contact} and the Lefschetz isomorphism $W:U^1\to U^3$.
+Its characteristic polynomial therefore divides that of $A_2$.
+For each fixed $\tau>0$, $t(0,\tau)>0$; hence the invertible locus
+is dense in $z$. At $\tau=0$ use \eqref{hyper}. Monic division extends
+the second factorization in \eqref{polys} everywhere. Lemma~\ref{axes}
+gives \eqref{middle} and the zero-twist identities. Applying the same
+Cauchy formula to $e_1$ yields $e_1=z^2A$ with $A(0,0)=0$.
+\end{proof}
+
+The horizontal alternating determinant and Lefschetz symmetry give
+\begin{equation}\label{divisor}
+ Z(s,z,\tau)=G(s,z,\tau)
+          \frac{(s-c)(s^2-e_1s+e_2)}{s-t},
+\end{equation}
+where the cut remainder $G$ is holomorphic and nonzero in $s$ inside
+$\gamma$; see \cite[(6.4)--(6.5)]{CD}.
+
+\begin{lemma}\label{normalization}
+For real nonzero small $\theta$,
+\begin{equation}\label{Gvariation}
+ \frac{G(0,\theta,\tau)}{G(0,\theta,0)}
+   =\exp\left(\int_0^\tau H(\theta,v)\,dv\right),\qquad
+ H=\str_{C^\bullet}\bigl(\Pi\alpha\wedge\iota_{\dot X}\bigr).
+\end{equation}
+The finite trace $H$ is uniformly bounded through $\theta=0$.
+\end{lemma}
+\begin{proof}
+Pullback acyclicity follows from the sphere-bundle spectral sequence.
+The full zero complex computes twisted de Rham cohomology, and every
+nonzero spectral block has contraction $\iota_XL^{-1}$. Thus the full
+cut complex is acyclic for fixed $\theta\ne0$.
+
+The cut projector commutes with $d_\theta$, $\iota_X$, $\alpha\wedge$,
+and $W$, so contact chirality $\Gamma$ preserves this arbitrary cut.
+Transport by $\Pi_\tau|_{C_{\theta,\tau_0}}$ fixes the differential.
+The identities $\Pi\dot\Pi\Pi=0$ and $[\Gamma,\Pi]=0$ cancel projector
+terms in the chirality-torsion derivative. In dimension five, direct
+differentiation of \cite[Definition 6.1]{CD} gives
+\[
+ \partial_\tau\log\tau(C^\bullet,\Gamma)
+       =2h_0-2h_1+h_2=-H,\qquad
+ h_k=\tr_{U^k}\bigl(\Pi\alpha(\dot X)\bigr).
+\]
+Here the $d\dot\alpha$ terms cancel between consecutive degrees;
+Lefschetz gives $h_3=h_1$, $h_4=h_0$, and
+$H=-h_0+h_1-h_2+h_3-h_4$. This is the calculation of
+\cite[Lemma 7.3]{CD}; it uses no restriction of the cut to zero
+resonances. Formula (6.6) and contact deformation invariance give
+\[
+ \tau_{\rm dyn}=(-1)^{Q_{\rm cut}}G(0,\theta,\tau)
+                    \tau(C^\bullet,\Gamma),\qquad Q_{\rm cut}=3,
+\]
+which proves \eqref{Gvariation}.
+
+For uniformity use the fixed sources and tests above. If
+$K_\tau=\alpha_\tau\wedge\iota_{\dot X_\tau}$, its compressed matrix
+is $F^{-1}J$, where
+\[
+ F_{ij}=\ell_i(\Pi f_j),\qquad
+ J_{ij}=\ell_i(\Pi K_\tau\Pi f_j).
+\]
+Take sources in $\mathcal H_2$, use continuity
+$\mathcal H_2\to\mathcal H_1$ for the inner projector and
+$\mathcal H_1\to\mathcal H_0$ for the outer one, and boundedness of the
+smooth order-zero map $K_\tau$. Then $F^{-1}J$ is continuous through
+$\theta=0$. In particular the ratio in \eqref{Gvariation} tends to one
+uniformly as $\tau\to0$. No scalar torsion is evaluated at the
+nonacyclic character.
+\end{proof}
+
+\section{The crossing and the counterexample}
+\begin{proof}[Proof of Theorem~\ref{main}]
+For real $\theta\ne0$ small, $t(\theta,0)=c_0(\theta)<0$, whereas
+$t(0,\tau)=r\tau+o(\tau)$. By \eqref{factors}, $|T|\le K$ and
+$t(0,\tau)\ge r\tau/2$ near zero. At $\tau_1=4K\theta^2/r$ the
+companion root is positive. Continuity therefore supplies a crossing
+\begin{equation}\label{cross}
+ t(\theta,\sigma_\theta)=0,\qquad
+ 0<\sigma_\theta\le4K\theta^2/r,\qquad
+ \sigma_\theta/\theta^2\longrightarrow\kappa/(2r).
+\end{equation}
+At that crossing $c\ne0$ and the horizontal one-zero eigenvalue is simple.
+
+Let $V^k$ be the horizontal generalized zero spaces. Their dimensions
+are $(0,1,m,1,0)$. The full zero complex is acyclic. In the contact
+splitting its differential is
+\[
+ d_\theta(u+\alpha\wedge v)
+       =Du+Wv+\alpha\wedge(Lu-Dv).
+\]
+Exactness in degrees one and four makes $D:V^1\to V^2$ injective
+and $D:V^2\to V^3$ surjective. Moreover $D^2=0$ on $V^1$, so
+$m\ge2$. Since the rank-four middle cut contains the nonzero root $c$,
+$m\le3$. Thus $e_2=0$ at the crossing, and
+$Q(s)=s(s-e_1)$, with $e_1=0$ precisely when $m=3$.
+
+Specialize the spectral fiber in \eqref{divisor} and cancel its common
+$s$ factor. This gives the holomorphic function
+\begin{equation}\label{crossvalue}
+ Z(s,\theta,\sigma_\theta)
+   =G(s,\theta,\sigma_\theta)(s-c)(s-e_1),\qquad
+ Z(0,\theta,\sigma_\theta)=G(0,\theta,\sigma_\theta)c e_1.
+\end{equation}
+For $m=3$ this has a simple zero; for $m=2$ its value at zero is nonzero.
+On the hyperbolic axis, by \eqref{hyper} and \eqref{middle},
+\[
+ Z(0,\theta,0)=-G(0,\theta,0)c_0(\theta)^2\ne0.
+\]
+Consequently, in both cases,
+\begin{equation}\label{exactratio}
+ \frac{Z(0,\theta,\sigma_\theta)}{Z(0,\theta,0)}
+ =-\frac{G(0,\theta,\sigma_\theta)}{G(0,\theta,0)}
+     \frac{c(\theta,\sigma_\theta)}{c_0(\theta)}
+     \frac{e_1(\theta,\sigma_\theta)}{c_0(\theta)}
+ \longrightarrow0.
+\end{equation}
+The three factors tend respectively to $1,1,0$: use
+Lemma~\ref{normalization}, then \eqref{factors}, then
+$e_1=\theta^2A$ with $A(0,0)=0$, together with \eqref{c0}.
+
+Fried's hyperbolic theorem \cite{Fried} gives
+$|Z(0,\theta,0)|=T_{\chi_\theta}(\Sigma)^2$.
+Acyclic unitary analytic torsion is metric-independent on the closed
+odd-dimensional base. Choose any nonzero $\theta_j\to0$ and put
+$g_j=g_{\sigma_{\theta_j}}$, $\chi_j=\chi_{\theta_j}$.
+Equation \eqref{exactratio} proves \eqref{ratio}; \eqref{cross} gives
+smooth convergence of the negatively curved metrics.
+\end{proof}
+
+\paragraph{Specialization.}
+The value in \eqref{crossvalue} is the ordinary value of the meromorphic
+function for the crossing metric. Continuing nonresonant values instead
+would amount to an additional cancellation in the parameter as well as
+in $s$. Meromorphic continuation does not supply that cancellation.
+Chaubet--Dang's dynamical torsion includes the refined torsion of the
+zero complex \cite[(6.7)]{CD}; its invariance is consistent with the
+change of the ordinary specialized value.
+
+\begin{thebibliography}{9}
+\bibitem{BO} U. Bunke and M. Olbrich,
+\emph{Theta and zeta functions for odd-dimensional locally symmetric spaces
+of rank one}, \href{https://arxiv.org/abs/dg-ga/9407012}{arXiv:dg-ga/9407012},
+1994, Proposition 4.7.
+\bibitem{CDDP} M. Ceki\'c, B. Delarue, S. Dyatlov and G. P. Paternain,
+\emph{The Ruelle zeta function at zero for nearly hyperbolic 3-manifolds},
+Invent. Math. \textbf{229} (2022), 303--394,
+\href{https://arxiv.org/abs/2009.08558}{arXiv:2009.08558v3}.
+\bibitem{CD} Y. Chaubet and N. V. Dang,
+\emph{Dynamical torsion for contact Anosov flows},
+Anal. PDE \textbf{17} (2024), 2619--2681,
+\href{https://arxiv.org/abs/1911.09931}{arXiv:1911.09931v2}.
+\bibitem{DGRS} N. V. Dang, C. Guillarmou, G. Rivi\`ere and S. Shen,
+\emph{The Fried conjecture in small dimensions},
+Invent. Math. \textbf{220} (2020), 525--579,
+\href{https://arxiv.org/abs/1807.01189}{arXiv:1807.01189}.
+\bibitem{Fried} D. Fried,
+\emph{Analytic torsion and closed geodesics on hyperbolic manifolds},
+Invent. Math. \textbf{84} (1986), 523--540.
+\bibitem{MS} D. Margalit and S. Spallone,
+\emph{A homological recipe for pseudo-Anosovs},
+\href{https://margalit.droppages.net/papers/homcrit.pdf}{author manuscript},
+Propositions 1--2.
+\bibitem{Thurston} W. P. Thurston,
+\emph{Hyperbolic structures on 3-manifolds, II: surface groups and
+3-manifolds which fiber over the circle},
+\href{https://arxiv.org/abs/math/9801045}{arXiv:math/9801045}.
+\bibitem{Zw} M. Zworski,
+\emph{Mathematical study of scattering resonances},
+Bull. Math. Sci. \textbf{7} (2017), 1--85,
+\href{https://doi.org/10.1007/s13373-017-0099-4}{doi:10.1007/s13373-017-0099-4},
+Conjecture 9.
+\bibitem{Crossing} blawton,
+\emph{Resonance-cluster analysis for a proposed counterexample to Fried's
+conjecture}, conditional Lean formalization, 2026,
+\href{https://github.com/blawton/fried-conj-lean/tree/610d659ea15af869553f6e3e79c432880d9b0ab0}
+{\texttt{fried-conj-lean}}, revision \texttt{610d659};
+\href{https://palomar-registry.org/entry?id=PALOMAR-2026-09-17-000006\&version=1}
+{Palomar entry PALOMAR-2026-09-17-000006}.
+\end{thebibliography}
+\end{document}
