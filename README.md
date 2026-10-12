@@ -13,6 +13,11 @@ The manuscript is `ordinary_fried_obstruction.tex`, SHA-256:
 23672871936c6af5c6b13fc556a701027014a770ab291bb1c59652902ee5681e
 ```
 
+## Announcement manuscript
+
+The announcement is available as a [PDF](Fried_conjecture.pdf) and
+[LaTeX source](main-55.tex). These files preserve the supplied manuscript snapshot.
+
 ## Reproducing the checks
 
 The toolchain is pinned to `leanprover/lean4:v4.35.0-rc3`; Mathlib is pinned to
